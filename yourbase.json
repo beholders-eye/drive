@@ -8,6 +8,8 @@
    "build":{
       "checkout_directory":"$GOPATH/src/drive",
       "run":[
+	 "apt update",
+	 "apt install -y build-essential",
          "go get -t .",
          "go test -v ./..."
       ]
