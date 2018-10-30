@@ -6,7 +6,7 @@
       ]
    },
    "build":{
-      "checkout_directory":"$GOPATH/src/drive",
+      "checkout_directory":"$GOPATH/src/beholders-eye",
       "run":[
 	 "apt update",
 	 "apt install -y build-essential",
