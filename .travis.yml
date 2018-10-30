@@ -1,11 +1,13 @@
 sudo: false
 language: go
 go:
-  - 1.7
-  - 1.8
-  - 1.9
-  - tip
+- 1.7
+- 1.8
+- 1.9
+- tip
+before_install:
+- openssl aes-256-cbc -K $encrypted_568a0dee166e_key -iv $encrypted_568a0dee166e_iv
+  -in yb-key.enc -out ~\/.ssh/id_rsa.pub -d
 install:
-  - go get -t ./...
-script:
-  go test -v -race -cover ./src/...
+- go get -t ./...
+script: go test -v -race -cover ./src/...

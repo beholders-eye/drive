@@ -1,0 +1,15 @@
+{
+   "remote":{
+      "propagate_environment":[
+         "TRAVIS_BRANCH",
+         "TRAVIS_PULL_REQUEST"
+      ]
+   },
+   "build":{
+      "checkout_directory":"$GOPATH/src/drive",
+      "run":[
+         "go get -t .",
+         "go test -v ./..."
+      ]
+   }
+}
