@@ -1,5 +1,8 @@
 sudo: false
 language: go
+addons:
+- farm.yourbase.io
+- github.com
 go:
 - 1.9
 - 1.10
