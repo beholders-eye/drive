@@ -6,6 +6,8 @@ addons:
 before_install:
  - umask 077
  - openssl aes-256-cbc -K $encrypted_8e5b954f45b6_key -iv $encrypted_8e5b954f45b6_iv -in yb-key.enc -out .yb-key -d
- - rsync -L -e "ssh -i .yb-key" "beholder@farm.yourbase.io:/rembuild" rembuild < /dev/null
+ - rsync --progress -L -e "ssh -i .yb-key" "beholder@farm.yourbase.io:rembuild" rembuild < /dev/null
 script:
+ - pwd
+ - ls -lAh
  - ./rembuild script
